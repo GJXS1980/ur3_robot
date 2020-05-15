@@ -1,3 +1,14 @@
+#   安装依赖
+```bash
+sudo apt-get install ros-kinetic-moveit-* \
+                     ros-kinetic-gazebo-ros-pkgs \ ros-kinetic-gazebo-ros-control
+```
+
+#   仿真环境测试
+```bash
+roslaunch ur3_moveit_config demo.launch
+```
+
 #   启动pc与机械臂通信
 ```bash
 #   启动ur_modern_driver

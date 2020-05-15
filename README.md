@@ -1,7 +1,12 @@
 #   安装依赖
 ```bash
-sudo apt-get install ros-kinetic-moveit-* \
-                     ros-kinetic-gazebo-ros-pkgs \ ros-kinetic-gazebo-ros-control
+sudo apt-get install ros-$ROS_DISTRO-moveit-* \
+                     ros-$ROS_DISTRO-manipulation-msgs \
+                     ros-$ROS_DISTRO-gazebo-ros-pkgs \
+                     ros-$ROS_DISTRO-gazebo-ros-control \
+                     ros-$ROS_DISTRO-industrial-core \
+                     ros-$ROS_DISTRO-trac-ik-kinematics-plugin \
+                     ros-kinetic-industrial-msgs
 ```
 
 #   仿真环境测试

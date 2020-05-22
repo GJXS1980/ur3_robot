@@ -361,5 +361,72 @@
       <child link="${prefix}tool0"/>
     </joint>
 
+  <!-- hand_camera -->
+  <link name="camera_base_link">
+    <inertial>
+      <origin xyz="0.00104677176561555 -0.0218960907674857 -0.0156368419811985" rpy="0 0 0" />
+      <mass value="0.0484545630468819" />
+      <inertia  ixx="4.19793069441571E-05"  ixy="1.29981320201142E-07"  ixz="6.72560291455767E-08"
+                iyy="3.68292321506223E-05"  iyz="-6.88066472385022E-06"
+                izz="6.86687322844385E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${pi}" />
+      <geometry>
+        <mesh filename="package://ur_description/meshes/ur3/collision/camera_base_link.STL" />
+      </geometry>
+      <material name="">
+        <color  rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur_description/meshes/ur3/collision/camera_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint  name="camera_base_joint"  type="fixed">
+    <origin xyz="0.0 0.0 0.0"  rpy="0 0 0" />
+    <parent link="tool0" />
+    <child  link="camera_base_link" />
+    <axis xyz="0 0 0" />
+    <safety_controller  k_velocity="0" />
+  </joint>
+
+  <link name="hand_camera_link">
+    <inertial>
+      <origin xyz="-0.013967679598446 -0.000346404022045277 -0.00855687282390438" rpy="0 0 0" />
+      <mass value="0.0105220157522583" />
+      <inertia  ixx="6.56726961439111E-07"  ixy="3.36774088493176E-09"  ixz="1.10137141282441E-07"
+                iyy="7.04478372578252E-06"  iyz="3.52475062132005E-09"
+                izz="7.48491927800553E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur_description/meshes/ur3/collision/hand_camera_link.STL" />
+      </geometry>
+      <material name="">
+        <color  rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur_description/meshes/ur3/collision/hand_camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint  name="hand_camera_joint"  type="fixed">
+    <origin xyz="0.00111637044362657 0.048499999996743 0.00205000007705258"  rpy="0 0 0" />
+    <parent link="camera_base_link" />
+    <child  link="hand_camera_link" />
+    <axis xyz="0 0 0" />
+    <safety_controller  k_velocity="0" />
+  </joint>
+
   </xacro:macro>
 </robot>

@@ -11,7 +11,7 @@ sudo apt-get install ros-$ROS_DISTRO-moveit-* \
 
 #   仿真环境测试
 ```bash
-roslaunch ur3_moveit_config demo.launch
+roslaunch ur3_description demo.launch
 ```
 
 #   启动pc与机械臂通信
@@ -19,9 +19,9 @@ roslaunch ur3_moveit_config demo.launch
 #   启动ur_modern_driver
 roslaunch ur_modern_driver ur3_bringup_joint_limited.launch robot_ip:=192.168.1.102
 #   启动moveit_planning
-roslaunch ur3_moveit_config ur3_moveit_planning_execution.launch
+roslaunch ur3_description ur3_moveit_planning_execution.launch
 #   在rviz导入模型
-roslaunch ur3_moveit_config moveit_rviz.launch config:=true
+roslaunch ur3_description moveit_rviz.launch config:=true
 ```
 
 #   控制机械臂
@@ -45,3 +45,5 @@ rosrun tf tf_echo base_link ee_link
 ```bash
 rosrun ur_planning pose_planning.py
 ```
+
+

@@ -11,15 +11,13 @@
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="ur3_arm">
         <link name="base_link" />
+        <link name="tool0" />
         <link name="shoulder_link" />
         <link name="upper_arm_link" />
         <link name="forearm_link" />
         <link name="wrist_1_link" />
         <link name="wrist_2_link" />
         <link name="wrist_3_link" />
-        <link name="tool0" />
-        <link name="camera_base_link" />
-        <link name="hand_camera_link" />
         <joint name="shoulder_pan_joint" />
         <joint name="shoulder_lift_joint" />
         <joint name="elbow_joint" />
@@ -38,15 +36,15 @@
         <joint name="wrist_3_joint" value="0" />
     </group_state>
     <group_state name="up" group="ur3_arm">
-        <joint name="elbow_joint" value="0.0345" />
+        <joint name="elbow_joint" value="0" />
         <joint name="shoulder_lift_joint" value="-1.588" />
-        <joint name="shoulder_pan_joint" value="-0.3452" />
+        <joint name="shoulder_pan_joint" value="0" />
         <joint name="wrist_1_joint" value="-1.519" />
-        <joint name="wrist_2_joint" value="-0.069" />
-        <joint name="wrist_3_joint" value="3.038" />
+        <joint name="wrist_2_joint" value="0" />
+        <joint name="wrist_3_joint" value="-3.1761" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="tool0" parent_link="tool0" group="ur3_arm" parent_group="ur3_arm" />
+    <end_effector name="tool0" parent_link="tool0" group="ur3_arm" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="world_joint" type="fixed" parent_frame="world" child_link="base_link" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
